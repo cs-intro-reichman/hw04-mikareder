@@ -118,8 +118,8 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         char [] arrnew= new char [endIndex-beginIndex];
-        for (int i = beginIndex; i < arr.length-1; i++) {
-            arr[i]=arrnew[i-beginIndex];
+        for (int i = beginIndex; i < endIndex; i++) {
+            arrnew[i - beginIndex] = arr[i];
         }
         return arrnew;
     }
