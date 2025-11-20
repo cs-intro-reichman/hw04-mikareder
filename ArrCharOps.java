@@ -136,13 +136,13 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         int hash=0;
-        if(arr==null){
+        if(arr.length==0){
             return 0;
         }
-       for(int i=0; i<arr.length;i++){
-            hash+=(arr[i])*Math.pow(7,(arr.length-(i+1))); // u better use math.pow function
+       for(int i=0; i<arr.length-1;i++){
+            hash+=(arr[i])*7^(arr.length-(i+1)); 
        } 
-     hash+= arr[arr.length-1];
+        hash+= arr[arr.length-1];
         return hash;
     }
 
