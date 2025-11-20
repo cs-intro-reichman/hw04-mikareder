@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
@@ -21,6 +23,20 @@ public class KeywordsDetector {
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        String word ="";
+        for(int i=0; i<sentences.length; i++){
+            String [] str = sentences[i].split(" ");
+            //System.out.println(Arrays.toString(str));
+            for(int v=0; v<str.length;v++){
+                     for(int j=0; j<keywords.length;j++){
+                         if(str[v].toLowerCase().equals(keywords[j].toLowerCase())){
+                                 System.out.println((sentences[i]));
+                         }
+                 }
+            }
+           
+            word="";
+        }
+        System.out.println("");
     }
 }

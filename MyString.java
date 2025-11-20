@@ -27,19 +27,21 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        int count=0;
-        
-        if(str1.length()<str2.length()){
+        if(str1 == null || str2 ==null){
             return false;
         }
-        if(str1 == null || str2 ==null){
+        if(str1.length()<str2.length()){
             return false;
         }
         if(str2.length()==0){
             return true;
         }
+        str1=str1.toLowerCase();
+        str2=str2.toLowerCase();
+
         for (int i = 0; i <= str1.length() - str2.length(); i++) {
-        while (count < str2.length() && str1.toLowerCase().charAt(i + count) == str2.toLowerCase().charAt(count)) {
+        int count=0;
+        while (count < str2.length() && str1.charAt(i + count) == str2.charAt(count)) {
             count++;
         }
         if (count == str2.length()) {
