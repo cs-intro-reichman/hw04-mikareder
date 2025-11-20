@@ -45,19 +45,18 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        boolean check=false;
+        boolean check=true;
         if(arr1== null&& arr2==null){
             return true;
         }
         if(arr1.length==arr2.length){
             for (int i = 0; i < arr1.length; i++) {
           
-            if(arr1[i]==arr2[i]){
-                 check=true;
-            }
-            else{
+            if(arr1[i]!=arr2[i]){
                 check=false;
+                break;
             }
+            
                
         }
       
@@ -141,8 +140,9 @@ public class ArrCharOps {
             return 0;
         }
        for(int i=0; i<arr.length;i++){
-            hash+=arr[i]*7^(arr.length-(i+1));
-       }
+            hash+=(arr[i])*Math.pow(7,(arr.length-(i+1))); // u better use math.pow function
+       } 
+     hash+= arr[arr.length-1];
         return hash;
     }
 
@@ -174,11 +174,14 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         
         int minLength = Math.min(str1.length(), str2.length());
+        if(str1==null || str2==null){
+            return -2;
+        }
         for (int i = 0; i < minLength; i++) {
             char c1 = Character.toLowerCase(str1.charAt(i));
             char c2 = Character.toLowerCase(str2.charAt(i));
 
-            if (c1 >= c2) {
+            if (c1 > c2) { 
                 return 1;
             }
             if (c1 < c2){
@@ -188,5 +191,6 @@ public class ArrCharOps {
         }
             return Integer.compare(str1.length(), str2.length());
         }
+        
     }
 
