@@ -30,19 +30,21 @@ public class MyString {
         if(str1.length()<str2.length()){
             return false;
         }
-        for (int i = 0; i < str1.length(); i++) {
-                for (int j = 0; j < str2.length(); j++) {
-                    if(str1.charAt(i)==str2.charAt(j)){
-                        count++;
-                    }
-                   if(count==str2.length()){
-                        return true;
-                    }
-                }
-            }
-            
+        if(str1 == null || str2 ==null){
+            return false;
+        }
+        if(str2.length()==0){
+            return true;
+        }
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+        while (count < str2.length() && str1.charAt(i + count) == str2.charAt(count)) {
+            count++;
+        }
+        if (count == str2.length()) {
+            return true;  
+        }
         
-        
-        return false;
     }
+      return false;
+}
 }
