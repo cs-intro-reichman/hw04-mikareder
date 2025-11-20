@@ -7,6 +7,7 @@ public class ArrCharOps {
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
         System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
+
         System.out.println(charAt(arr1,2));      
         System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
@@ -45,6 +46,9 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         boolean check=false;
+        if(arr1== null&& arr2==null){
+            return true;
+        }
         if(arr1.length==arr2.length){
             for (int i = 0; i < arr1.length; i++) {
           
@@ -133,6 +137,9 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         int hash=0;
+        if(arr==null){
+            return 0;
+        }
        for(int i=0; i<arr.length;i++){
             hash+=arr[i]*7^(arr.length-(i+1));
        }
@@ -171,7 +178,7 @@ public class ArrCharOps {
             char c1 = Character.toLowerCase(str1.charAt(i));
             char c2 = Character.toLowerCase(str2.charAt(i));
 
-            if (c1 > c2) {
+            if (c1 >= c2) {
                 return 1;
             }
             if (c1 < c2){
