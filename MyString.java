@@ -36,8 +36,6 @@ public class MyString {
         if(str2.length()==0){
             return true;
         }
-        str1=str1.toLowerCase();
-        str2=str2.toLowerCase();
 
         for (int i = 0; i <= str1.length() - str2.length(); i++) {
         int count=0;

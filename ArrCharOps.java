@@ -49,7 +49,12 @@ public class ArrCharOps {
         if(arr1== null&& arr2==null){
             return true;
         }
-        if(arr1.length==arr2.length){
+        if(arr1== null|| arr2==null){
+            return false;
+        }
+         if(arr1.length != arr2.length){
+            return false;
+        }
             for (int i = 0; i < arr1.length; i++) {
           
             if(arr1[i]!=arr2[i]){
@@ -60,7 +65,7 @@ public class ArrCharOps {
                
         }
       
-    }
+    
       return check;
 }
 
@@ -91,7 +96,7 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        for (int i=arr.length-1; i>0;i--){
+        for (int i=arr.length-1; i>=0;i--){
             if (arr[i]==ch){
                 return i;
             }
@@ -140,15 +145,7 @@ public class ArrCharOps {
         hash = hash * 7 + arr[i];
         }
         return hash;
-    }
-    
-    private static long pow7(int exp) {
-        long result = 1;
-        for (int i = 0; i < exp; i++) {
-            result *= 7;
-        }
-        return result;
-    }   
+    }  
     /**
      * Compares the two strings lexicographically.
      * Assume that both strings are not empty.
@@ -176,13 +173,13 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         
-        if(str1==null || str2==null){
+        if(str1==null || str2==null || str1.length()==0|| str2.length()==0){
             return -2;
         }
         int minLength = Math.min(str1.length(), str2.length());
         for (int i = 0; i < minLength; i++) {
-            char c1 = Character.toLowerCase(str1.charAt(i));
-            char c2 = Character.toLowerCase(str2.charAt(i));
+            char c1 = (str1.charAt(i));
+            char c2 = (str2.charAt(i));
 
             if (c1 > c2) { 
                 return 1;
